@@ -17,7 +17,7 @@
   --color-teal-500: rgba(33, 128, 141, 1);
   --color-teal-600: rgba(29, 116, 128, 1);
   --color-teal-700: rgba(26, 104, 115, 1);
-  --color-teal-800: rgba(41, 150, 161, 1);
+  --color-teal-800: rgb(5, 44, 49);
   --color-red-400: rgba(255, 84, 89, 1);
   --color-red-500: rgba(192, 21, 47, 1);
   --color-orange-400: rgba(230, 129, 97, 1);
@@ -213,8 +213,8 @@ pre code {
 }
 
 .btn--primary {
-  background: var(--color-primary);
-  color: var(--color-btn-primary-text);
+  background: var(--color-secondary);
+  color: var(--color-secondary-btn-primary-text);
 }
 
 .btn--primary:hover {
@@ -240,8 +240,8 @@ pre code {
 
 .btn--outline {
   background: transparent;
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
+  border: 1px solid var(--color-secondary-border);
+  color: var(--color-secondary-text);
 }
 
 .btn--outline:hover {
@@ -541,16 +541,16 @@ select.form-control {
 /* Arabic RTL Design System Override */
 :root {
   /* Improved Color Scheme - More comfortable and harmonious */
-  --color-primary: #2C5F41; /* Deep Forest Green */
-  --color-primary-hover: #234A33;
+  --color-primary: #1F6F8A; /* Deep Forest Green */
+  --color-primary-hover: #2796A1;
   --color-primary-active: #1B3626;
   --color-background: #F8F9F7; /* Soft Off-White */
   --color-surface: #FAFCFA; /* Very Light Green */
-  --color-secondary: #8FBC8F; /* Sage Green */
-  --color-secondary-hover: #7BA67B;
-  --color-secondary-active: #6B9B6B;
-  --color-accent: #D4B996; /* Warm Beige */
-  --color-accent-hover: #C9A87F;
+  --color-secondary: #144E61; /* Sage Green */
+  --color-secondary-hover: #2796A1;
+  --color-secondary-active: #1F6F8A;
+  --color-accent: #4fc8d3; /* Warm Beige */
+  --color-accent-hover: #4fc8d3;
   --color-text: #2F2F2F; /* Dark Gray */
   --color-text-secondary: #5A5A5A;
   --color-border: rgba(44, 95, 65, 0.2);
@@ -558,9 +558,9 @@ select.form-control {
   --color-btn-primary-text: #FFFFFF;
   
   /* Gradient combinations */
-  --gradient-primary: linear-gradient(135deg, #2C5F41 0%, #3A7A52 100%);
-  --gradient-secondary: linear-gradient(135deg, #8FBC8F 0%, #A5D1A5 100%);
-  --gradient-accent: linear-gradient(135deg, #D4B996 0%, #E2C7A8 100%);
+  --gradient-primary: linear-gradient(135deg, #1F6F8A 0%, #2796A1 100%);
+  --gradient-secondary: linear-gradient(135deg, #144E61  0%, #144E61  100%);
+  --gradient-accent: linear-gradient(135deg, #1F6F8A 0%, #2796A1 100%);
   
   /* Arabic font stack */
   --font-family-arabic: 'Cairo', 'Tahoma', 'Arial Unicode MS', sans-serif;
@@ -588,7 +588,7 @@ body {
   width: 100%;
   background: rgba(248, 249, 247, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-secondary-border);
   z-index: 1000;
   transition: all var(--duration-normal) var(--ease-standard);
 }
@@ -600,12 +600,26 @@ body {
   padding: var(--space-16) 0;
 }
 
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row; /* يجعل الاسم على يسار الشعار */
+}
+
+.nav__logo {
+  height: 40px;
+  width: auto;
+}
+
 .nav__brand h2 {
-  color: var(--color-primary);
+  color: var(--color-secondary-primary);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-xl);
   margin: 0;
 }
+
+
 
 .nav__list {
   display: flex;
@@ -687,14 +701,14 @@ body {
 
 .hero__subtitle {
   font-size: var(--font-size-2xl);
-  color: var(--color-primary);
+  color: var(--color-black);
   margin-bottom: var(--space-20);
   font-weight: var(--font-weight-semibold);
 }
 
 .hero__description {
   font-size: var(--font-size-lg);
-  color: var(--color-text-secondary);
+  color: var(--color-secondary);
   max-width: 600px;
   margin: 0 auto var(--space-32);
   line-height: 1.8;
@@ -1277,7 +1291,7 @@ section {
 }
 
 .btn--primary:hover {
-  background: var(--color-primary-hover);
+  background: var(--color-primary);
   box-shadow: 0 6px 20px rgba(44, 95, 65, 0.4);
   transform: translateY(-2px);
 }
@@ -1294,9 +1308,9 @@ section {
 }
 
 .btn--outline:hover {
-  background: var(--color-accent);
-  color: var(--color-background);
-  border-color: var(--color-accent);
+  background: var(--color-background);
+  color: var(--color-secondary);
+  border-color: var(--color-text);
 }
 
 .btn--full-width {
@@ -1305,7 +1319,7 @@ section {
 
 /* Footer */
 .footer {
-  background: var(--color-primary);
+  background: var(--color-teal-600);
   color: var(--color-background);
   padding: 60px 0 var(--space-24);
 }
@@ -1347,8 +1361,31 @@ section {
 
 .footer__social {
   display: flex;
-  gap: var(--space-16);
+  justify-content: center;   
+  align-items: center;       
+  gap: var(--space-16);      
+  margin-top: var(--space-16);
 }
+
+.footer__social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%;                     
+  background: rgba(255, 255, 255, 0.1);   
+  color: var(--color-background);         
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer__social a:hover {
+  background: var(--color-accent);        
+  color: #fff;                           
+  transform: translateY(-3px);            
+}
+
 
 .footer__bottom {
   text-align: center;
