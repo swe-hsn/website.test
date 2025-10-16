@@ -769,6 +769,13 @@ html[dir="rtl"] .hero__img--left{  grid-column: 3; }
   .hero__img--left  img{ object-position: left center; }
 }
 
+@media (max-width: 768px) {
+  .hero {
+    background-position: center top;
+    background-size: cover;
+  }
+}
+
 
 /* Section Styles */
 section {
