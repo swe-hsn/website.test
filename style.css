@@ -15,7 +15,7 @@
   --color-teal-300: rgba(50, 184, 198, 1);
   --color-teal-400: rgba(45, 166, 178, 1);
   --color-teal-500: rgba(33, 128, 141, 1);
-  --color-teal-600: rgba(29, 116, 128, 1);
+  --color-teal-600: #05192c;
   --color-teal-700: rgba(26, 104, 115, 1);
   --color-teal-800: rgb(5, 44, 49);
   --color-red-400: rgba(255, 84, 89, 1);
@@ -526,10 +526,7 @@ select.form-control {
   outline-offset: 2px;
 }
 
-/* Dark mode specifics */
-[data-color-scheme="dark"] .btn--outline {
-  border: 1px solid var(--color-border-secondary);
-}
+
 
 @font-face {
   font-family: 'FKGroteskNeue';
@@ -596,19 +593,15 @@ body {
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; 
+  flex-direction: row-reverse; 
   padding: var(--space-16) 0;
 }
 
-.nav__brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-direction: row; /* يجعل الاسم على يسار الشعار */
-}
+
 
 .nav__logo {
-  height: 40px;
+  height: 55px;
   width: auto;
 }
 
@@ -678,13 +671,13 @@ body {
 
 /* Hero Section */
 .hero {
-  padding: 120px 0 80px;
-  background: linear-gradient(135deg, var(--color-surface) 0%, rgba(212, 185, 150, 0.1) 50%, var(--color-background) 100%);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+  background: 
+    linear-gradient(135deg, #05192c, rgba(212,185,150,0.15)),
+    url('img/camera-de-seguranca-cctv.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
-
 .hero__container {
   text-align: center;
 }
@@ -692,7 +685,7 @@ body {
 .hero__title {
   font-size: var(--font-size-4xl);
   margin-bottom: var(--space-16);
-  background: var(--gradient-primary);
+  background: var(--color-teal-600);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -701,7 +694,7 @@ body {
 
 .hero__subtitle {
   font-size: var(--font-size-2xl);
-  color: var(--color-black);
+  color: var(--color-white);
   margin-bottom: var(--space-20);
   font-weight: var(--font-weight-semibold);
 }
@@ -788,11 +781,13 @@ section {
 }
 
 .section__title {
-  font-size: var(--font-size-3xl);
-  margin-bottom: var(--space-16);
-  color: var(--color-primary);
-  font-weight: var(--font-weight-bold);
+  font-size: 2.3rem;       
+  font-weight: 700;        
+  letter-spacing: 0.2px;   
+  color: #233b61;         
+  margin-bottom: 15px;     
 }
+
 
 .section__subtitle {
   font-size: var(--font-size-lg);
@@ -802,92 +797,129 @@ section {
   line-height: 1.7;
 }
 
+.section__title__value {
+  font-size: 2.3rem;       
+  font-weight: 700;        
+  letter-spacing: 0.2px;   
+  color: #ffffff;         
+  margin-bottom: 15px;     
+}
+
+
+.section__subtitle__value {
+  font-size: var(--font-size-lg);
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.section__title__services {
+  font-size: 2.3rem;       
+  font-weight: 700;        
+  letter-spacing: 0.2px;   
+  color: #ffffff;         
+  margin-bottom: 15px;     
+}
+
+
+.section__subtitle__services {
+  font-size: var(--font-size-lg);
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
 /* Image Placeholder Styles */
-.content__image-placeholder {
-  flex: 1;
-  min-width: 250px;
-}
-
-.image__placeholder {
-  background: var(--color-surface);
-  border: 2px dashed var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-32);
-  text-align: center;
-  transition: all var(--duration-normal) var(--ease-standard);
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.image__placeholder:hover {
-  border-color: var(--color-accent);
-  background: rgba(212, 185, 150, 0.1);
-}
-
-.image__placeholder span {
-  font-size: 48px;
-  margin-bottom: var(--space-12);
-}
-
-.image__placeholder p {
-  color: var(--color-text-secondary);
-  font-weight: var(--font-weight-medium);
-  margin: 0;
-}
-
-.content__text {
-  flex: 1;
-  min-width: 300px;
-}
-
-/* About Section */
-.about {
-  background: var(--color-surface);
-}
-
-.about__content {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  margin-top: var(--space-32);
-}
-
 .about__mission,
 .about__vision,
 .about__goals {
   display: flex;
-  gap: var(--space-32);
   align-items: center;
-  padding: var(--space-32);
-  background: var(--color-background);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-card-border);
-  transition: all var(--duration-normal) var(--ease-standard);
+  gap: 36px;
+  background: #f7f9fb;
+  border-radius: 22px;
+  border: 1.5px solid #e6e9ef;
+  box-shadow: 0 6px 24px rgba(40, 48, 78, 0.12);
+  padding: 38px 30px;
+  transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
 }
 
 .about__mission:hover,
 .about__vision:hover,
 .about__goals:hover {
-  border-color: var(--color-accent);
-  box-shadow: 0 8px 25px rgba(44, 95, 65, 0.1);
-  transform: translateY(-2px);
+  border-color: #63a1e6;
+  box-shadow: 0 12px 36px rgba(99,161,230,0.14);
+  transform: translateY(-2px) scale(1.02);
 }
 
-.about__mission h3,
-.about__vision h3,
-.about__goals h3 {
-  color: var(--color-primary);
-  margin-bottom: var(--space-16);
-  font-weight: var(--font-weight-semibold);
+.content__image-placeholder {
+  min-width: 320px;
+  max-width: 370px;
+  height: 205px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image__placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #eaf2fa;
+  border: 4px solid #fff;
+  box-shadow: 0 7px 24px rgba(50,90,130,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about__mission .image__placeholder {
+  background-image: url('img/vision.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.about__vision .image__placeholder {
+  background-image: url('img/meassge.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.about__goals .image__placeholder {
+  background-image: url('img/target.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.content__text {
+  flex: 1;
+  text-align: right;
+  direction: rtl;
+  min-width: 250px;
+}
+
+.content__text h3 {
+  color: #233b61;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 2.3rem;
+  letter-spacing: 0.2px;
+}
+
+.content__text p {
+  color: #24354c;
+  font-size: 1.18rem;
+  font-weight: 400;
+  line-height: 2;
 }
 
 .about__goals ul {
   list-style: none;
   padding: 0;
-  margin-top: var(--space-16);
+  margin-top: 1rem;
 }
 
 .about__goals li {
@@ -900,13 +932,15 @@ section {
   content: '✓';
   position: absolute;
   right: 0;
-  color: var(--color-accent);
+  color: #63a1e6;
   font-weight: bold;
+  font-size: 1.18em;
 }
+
 
 /* Values Section */
 .values {
-  background: rgba(143, 188, 143, 0.05);
+  background: var(--color-teal-600);
 }
 
 .values__grid {
@@ -933,6 +967,16 @@ section {
 .value__icon {
   font-size: 48px;
   margin-bottom: var(--space-16);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value__icon img {
+  width: 0.8em;       /* تصغير الصورة قليلاً من الحجم النصي */
+  height: 0.8em;
+  object-fit: contain; /* يحافظ على الأبعاد بدون تمدد */
+  display: block;
 }
 
 .value__title {
@@ -984,9 +1028,11 @@ section {
 }
 
 .product__image {
-  font-size: 48px;
-  text-align: center;
-  margin-bottom: var(--space-16);
+  width: 40px;            /* حجم الأيقونة (يمكنك تغييره مثل 24px أو 32px) */
+  height: 40px;
+  object-fit: contain;     /* يحافظ على التناسب الأصلي للصورة */
+  display: block;
+  margin: 0 auto;          /* ✅ يجعل الصورة في المنتصف أفقياً */
 }
 
 .product__name {
@@ -1036,7 +1082,7 @@ section {
 
 /* Services Section */
 .services {
-  background: rgba(143, 188, 143, 0.05);
+  background: var(--color-teal-600);
 }
 
 .services__grid {
@@ -1063,6 +1109,16 @@ section {
 .service__icon {
   font-size: 48px;
   margin-bottom: var(--space-16);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service__icon img {
+  width: 0.8em;       /* تصغير الصورة قليلاً من الحجم النصي */
+  height: 0.8em;
+  object-fit: contain; /* يحافظ على الأبعاد بدون تمدد */
+  display: block;
 }
 
 .service__title {
@@ -1102,9 +1158,18 @@ section {
 }
 
 .portfolio__image {
-  font-size: 48px;
-  text-align: center;
-  margin-bottom: var(--space-16);
+  width: 60px;              /* تقليل الحجم قليلاً عن 48px */
+  height: 60px;
+  margin: 0 auto var(--space-16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio__image img {
+  width: 70%;               /* تصغير الصورة داخل المربع */
+  height: 70%;
+  object-fit: contain;       /* تحافظ على الأبعاد بدون تمدد */
 }
 
 .portfolio__title {
@@ -1225,10 +1290,21 @@ section {
 }
 
 .contact__icon {
-  font-size: 24px;
-  color: var(--color-primary);
+  width: 24px;              /* حجم الأيقونة */
+  height: 24px;
   margin-top: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.contact__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      /* تحافظ على أبعاد الصورة بدون تشويه */
+}
+
+
 
 .contact__details h4 {
   color: var(--color-primary);
@@ -1284,15 +1360,15 @@ section {
 }
 
 .btn--primary {
-  background: var(--gradient-primary);
+  background: var(--color-teal-600);
   color: var(--color-btn-primary-text);
   border: none;
   box-shadow: 0 4px 15px rgba(44, 95, 65, 0.3);
 }
 
 .btn--primary:hover {
-  background: var(--color-primary);
-  box-shadow: 0 6px 20px rgba(44, 95, 65, 0.4);
+  background: var(--color-teal-600);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
 }
 
@@ -1302,8 +1378,8 @@ section {
 }
 
 .btn--outline {
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
+  border: 2px solid var(--color-teal-600);
+  color: var(--color-teal-600);
   background: transparent;
 }
 
