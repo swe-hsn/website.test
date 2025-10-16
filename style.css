@@ -676,7 +676,7 @@ body {
     url('img/camera-de-seguranca-cctv.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 .hero__container {
   text-align: center;
